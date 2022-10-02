@@ -109,9 +109,9 @@ public class TaskController {
         
     }
     
-    public void removeById(int taskId) throws SQLException{
+    public void removeById(int taskId){
         //Cria uma variavel para armazenar o comando SQL.
-        String sql = "DELETE FROM tasks WHERE idFkTask = ?";
+        String sql = "DELETE FROM tasks WHERE id = ?";
         //Criar 2 variaveis Connection e PreparedStatment
         Connection connection = null;
         PreparedStatement statement = null;
@@ -124,6 +124,7 @@ public class TaskController {
             statement.setInt(1, taskId); 
             //Agora é só executar o comando no SQL e deleta uma tarefa
             statement.execute();
+            
             //Esse Exception trata qualquer execão
         }catch (Exception ex){
             throw new RuntimeException("Erro ao deletar a tarefa." + 

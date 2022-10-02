@@ -16,12 +16,9 @@ public class Task {
     private Date createdDate;
     private Date updatedDate;
 
-    public Task(int id, int idFkTask, String name, String description, 
+    public Task( String name, String description, 
                 Boolean completed, String comments, Date deadline, 
                 Date createdDate, Date updatedDate) {
-        
-        this.id = id;
-        this.idFkTask = idFkTask;
         this.name = name;
         this.description = description;
         this.completed = completed;
@@ -35,6 +32,7 @@ public class Task {
       Esse metodo quando for chamado vai criar o objeto na hora que for 
       Chamado setando a hora da chamada do metodo*/
     public Task(){
+        this.completed = false;
         this.createdDate = new Date();
         this.updatedDate = new Date();
     }
