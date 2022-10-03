@@ -8,21 +8,21 @@ public class Task {
     
     private int id;
     private int idFkTask; //Chave Estrangeira
-    private String name;
-    private String description;
+    private String product;
+    private String address;
     private Boolean completed;
-    private String comments;
+    private String contact;
     private Date deadline;
     private Date createdDate;
     private Date updatedDate;
 
-    public Task( String name, String description, 
-                Boolean completed, String comments, Date deadline, 
+    public Task( String product, String address, 
+                Boolean completed, String contact, Date deadline, 
                 Date createdDate, Date updatedDate) {
-        this.name = name;
-        this.description = description;
+        this.product = product;
+        this.address = address;
         this.completed = completed;
-        this.comments = comments;
+        this.contact = contact;
         this.deadline = deadline;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
@@ -53,20 +53,20 @@ public class Task {
         this.idFkTask = idFkTask;
     }
 
-    public String getName() {
-        return name;
+    public String getProduct() {
+        return product;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct(String product) {
+        this.product = product;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Boolean getCompleted() {
@@ -77,12 +77,12 @@ public class Task {
         this.completed = completed;
     }
 
-    public String getComments() {
-        return comments;
+    public String getContact() {
+        return contact;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public Date getDeadline() {
@@ -112,9 +112,9 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" + "id=" + id + ", idFkTask=" 
-                + idFkTask + ", name=" + name + ", description=" 
-                + description + ", completed=" + completed + ", comments=" 
-                + comments + ", deadline=" + deadline + ", createdDate=" 
+                + idFkTask + ", Product=" + product + ", address=" 
+                + address + ", completed=" + completed + ", contact=" 
+                + contact + ", deadline=" + deadline + ", createdDate=" 
                 + createdDate + ", updatedDate=" + updatedDate + '}';
     }
     

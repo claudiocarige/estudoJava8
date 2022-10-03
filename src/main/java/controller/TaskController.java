@@ -18,8 +18,8 @@ import java.util.List;
 public class TaskController {
     
     public void save(Task task){
-        String sql = "INSERT INTO tasks(idFkTask, name, description, completed, "
-                + "comments, deadline, createdDate, updatedDate) VALUES "
+        String sql = "INSERT INTO tasks(idFkTask, product, address, completed, "
+                + "contact, deadline, createdDate, updatedDate) VALUES "
                 + "(?, ?, ?, ?, ?, ?, ?, ?)";
         //Essas duas variaveis estão fora do bloco try, pois se estiver dentro
         //de try não podera ser acessada no finally para encerrar
@@ -32,10 +32,10 @@ public class TaskController {
             statement = connection.prepareStatement(sql);
             
             statement.setInt(1, task.getIdFkTask());
-            statement.setString(2, task.getName());
-            statement.setString(3, task.getDescription());
+            statement.setString(2, task.getProduct());
+            statement.setString(3, task.getAddress());
             statement.setBoolean(4, task.getCompleted());
-            statement.setString(5, task.getComments());
+            statement.setString(5, task.getContact());
             statement.setDate(6, new Date (task.getDeadline().getTime()));
             //O Date que o java passa é diferente a do SQL
             //Portanto esse Date entre Parenteses está com o import 
@@ -71,8 +71,8 @@ public class TaskController {
     }
     
     public void update(Task task){
-        String sql = "UPDATE tasks SET idFkTask = ?, name = ?, description = ?,"
-                + "completed = ?, comments = ?, deadline = ?,"
+        String sql = "UPDATE tasks SET idFkTask = ?, product = ?, address = ?,"
+                + "completed = ?, contact = ?, deadline = ?,"
                 + "createdDate = ?, updatedDate = ? WHERE id = ?";
         Connection connection = null;
         PreparedStatement statement = null;
@@ -82,10 +82,10 @@ public class TaskController {
             statement = connection.prepareStatement(sql);
             
             statement.setInt(1, task.getIdFkTask());
-            statement.setString(2, task.getName());
-            statement.setString(3, task.getDescription());
+            statement.setString(2, task.getProduct());
+            statement.setString(3, task.getAddress());
             statement.setBoolean(4, task.getCompleted());
-            statement.setString(5, task.getComments());
+            statement.setString(5, task.getContact());
             statement.setDate(6, new Date (task.getDeadline().getTime()));
             statement.setDate(7, new Date (task.getCreatedDate().getTime()));
             statement.setDate(8, new Date(task.getUpdatedDate().getTime()));
@@ -168,10 +168,10 @@ public class TaskController {
                 Task lista = new Task();
                 lista.setId(resultSet.getInt("id"));
                 lista.setIdFkTask(resultSet.getInt("idFkTask"));
-                lista.setName(resultSet.getString("name"));
-                lista.setDescription(resultSet.getString("description"));
+                lista.setProduct(resultSet.getString("product"));
+                lista.setAddress(resultSet.getString("address"));
+                lista.setContact(resultSet.getString("contact"));
                 lista.setCompleted(resultSet.getBoolean("completed"));
-                lista.setComments(resultSet.getString("comments"));
                 lista.setDeadline(resultSet.getDate("deadline"));
                 lista.setCreatedDate(resultSet.getDate("createdDate"));
                 lista.setUpdatedDate(resultSet.getDate("updatedDate"));

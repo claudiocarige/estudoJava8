@@ -42,12 +42,13 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
 
         jPanelToobar.setBackground(new java.awt.Color(255, 204, 0));
 
-        jLabelToobarTitle.setFont(new java.awt.Font("Rage Italic", 1, 36)); // NOI18N
+        jLabelToobarTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelToobarTitle.setForeground(new java.awt.Color(102, 51, 255));
         jLabelToobarTitle.setText("Cliente");
 
         jLabelToobarSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelToobarSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CheckRoxo.png"))); // NOI18N
+        jLabelToobarSave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabelToobarSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelToobarSaveMouseClicked(evt);
@@ -77,7 +78,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
 
         jPanelProject.setBackground(java.awt.Color.white);
 
-        jLabelName.setFont(new java.awt.Font("Rage Italic", 0, 24)); // NOI18N
+        jLabelName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelName.setText("Nome");
 
         jTextFieldName.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -87,7 +88,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
             }
         });
 
-        jLabelDescription.setFont(new java.awt.Font("Rage Italic", 0, 24)); // NOI18N
+        jLabelDescription.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelDescription.setText("Descrição");
 
         jTextAreaDescription.setColumns(20);
@@ -97,7 +98,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
 
         jLabelProjectNameError.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabelProjectNameError.setForeground(new java.awt.Color(204, 0, 0));
-        jLabelProjectNameError.setText("Campo de Nome é obrigatório.");
+        jLabelProjectNameError.setText("Campo Nome é obrigatório.");
 
         javax.swing.GroupLayout jPanelProjectLayout = new javax.swing.GroupLayout(jPanelProject);
         jPanelProject.setLayout(jPanelProjectLayout);

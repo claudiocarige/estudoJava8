@@ -10,8 +10,8 @@ import model.Task;
 
 public class TaskTableModel extends AbstractTableModel{
     
-    String[] columns = {"Modelo", "Descrição", "Tipo Pagamento", "Prazo Pagamento", "Status Pagamento", 
-                        "Editar", "Excluir"};
+    String[] columns = {"Produto", "Endereço", "What's App", "Data Aniversário", 
+                        "Inadimplente", "Editar", "Excluir"};
     List<Task> tasks = new ArrayList<>();
     
     // 3 métodos obrigatórios da classe Abstract.
@@ -51,11 +51,11 @@ public class TaskTableModel extends AbstractTableModel{
         //Qual valor deve ser exibido em cada linha ou coluna
         switch(columnIndex){
             case 0:
-                return tasks.get(rowIndex).getName();
+                return tasks.get(rowIndex).getProduct();
             case 1:
-                return tasks.get(rowIndex).getDescription();
+                return tasks.get(rowIndex).getAddress();
             case 2:
-                return tasks.get(rowIndex).getComments(); 
+                return tasks.get(rowIndex).getContact(); 
             case 3:
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 return dateFormat.format(tasks.get(rowIndex).getDeadline());
